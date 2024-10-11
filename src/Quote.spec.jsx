@@ -13,4 +13,11 @@ describe("Quote is render", ()=> {
             "Quote of the Day"
         );
     });
+
+    it("renders quote passed in as property", () => {
+        render(<Quote text="Whatever" />)
+        const expectedString = "Whatever"
+
+        expect(screen.getByText(expectedString)).toBeInTheDocument()
+    })
 });
