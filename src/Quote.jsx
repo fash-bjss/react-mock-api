@@ -1,7 +1,10 @@
 const Quote = () => {
 
-    return(<>
-    </>)
+    return(
+        <>
+            <p>Quote of the Day</p>
+        </>
+    )
 }
 
 export default Quote
