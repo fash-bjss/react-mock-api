@@ -41,4 +41,15 @@ describe("Quote Loader", () => {
         expect(quoteText).toBeInTheDocument()
 
     });
+
+    it("tests the API was setup correctly", async () => {
+
+        const response = await fetch("https://mock-api.com/quoteoftheday")
+        const quote = await response.json()
+
+        const text = quote.text
+
+        expect(text).toBe("Hello everybody")
+
+    })
 });
