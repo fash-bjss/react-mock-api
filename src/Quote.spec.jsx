@@ -7,6 +7,10 @@ describe("Quote is render", ()=> {
     it("renders heading text", ()=> {
         render(<Quote />);
 
-        expect(screen.getByText("Quote of the Day")).toBeInTheDocument()
+        const headerTwo = screen.getByRole("heading", {level: 2})
+
+        expect(headerTwo).toHaveTextContent(
+            "Quote of the Day"
+        );
     });
 });
