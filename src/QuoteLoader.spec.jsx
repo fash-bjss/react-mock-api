@@ -9,11 +9,10 @@ import { HttpResponse, http , httpResponse } from "msw"
 import { setupServer } from "msw/node"
 
 
-// https://quotes.rest/random
 
 //This will contain both real and mock api routes
 const apiRoutes = [
-    http.get("https://mock-api.com/quoteoftheday", ()=> {
+    http.get("https://example.com/quoteoftheday", ()=> {
         return HttpResponse.json({
             text: "Hello everybody"
         });
@@ -42,14 +41,15 @@ describe("Quote Loader", () => {
 
     });
 
-    it("tests the API was setup correctly", async () => {
+    // Scafollding added to check the mock-api loads correctly
+    // it("tests the API was setup correctly", async () => {
 
-        const response = await fetch("https://mock-api.com/quoteoftheday")
-        const quote = await response.json()
+    //     const response = await fetch("https://example.com/quoteoftheday")
+    //     const quote = await response.json()
 
-        const text = quote.text
+    //     const text = quote.text
 
-        expect(text).toBe("Hello everybody")
+    //     expect(text).toBe("Hello everybody")
 
-    })
+    // })
 });

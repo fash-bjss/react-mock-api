@@ -1,11 +1,12 @@
 import useFetch from "react-fetch-hook"
+import Quote from "./Quote"
 
 const QuoteLoader = () => {
 
-    const { data } = useFetch("https://mock-api.com/quoteoftheday")
+    const { data } = useFetch("https://example.com/quoteoftheday")
 
     if (data){
-        return "received " + data.text
+        return <Quote text={ data.text } />
     }
     console.log(data)
 }
