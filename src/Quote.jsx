@@ -2,7 +2,7 @@ const Quote = () => {
 
     return(
         <>
-            <p>Quote of the Day</p>
+            <h2>Quote of the Day</h2>
         </>
     )
 }
