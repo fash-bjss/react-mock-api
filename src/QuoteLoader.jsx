@@ -11,7 +11,9 @@ const QuoteLoader = () => {
     }
 
     if (data){
-        return <Quote text={ data.text } />
+        return <>
+            <Quote text={ data.text } />
+        </>
     }
 }
 

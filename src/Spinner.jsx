@@ -1,9 +1,9 @@
-import styles from "./Spinner.css"
+import "./Spinner.css"
 
 const Spinner = ({ reason }) => {
     return (
         <>
-            <div role="status" className={styles["spinner"]}>
+            <div role="status" className="spinner">
                 <span>{reason}</span>
             </div>
         </>
