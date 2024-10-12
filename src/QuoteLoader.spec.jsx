@@ -52,4 +52,15 @@ describe("Quote Loader", () => {
     //     expect(text).toBe("Hello everybody")
 
     // })
+
+    it("it shows spinner when loading", async() => {
+
+        render(<QuoteLoader />)
+
+        const status = await screen.getByRole("status")
+
+        expect(status).toHaveTextContent(
+            "Quote is loading..."
+        )
+    })
 });
