@@ -61,6 +61,20 @@ describe("Quote Loader", () => {
 
         expect(status).toHaveTextContent(
             "Quote is loading..."
-        )
-    })
+        );
+    });
+
+    it("informs user if there is an error", async() => {
+        stubQuoteApi.use(
+            http.get("https://example.com/quoteoftheday", () => {
+                return HttpResponse.error();
+              },
+              { once: true }
+            )
+          );
+    
+        render(<QuoteLoader />)
+        const alert = await screen.findByText("Error loading...")
+        expect(alert).toBeInTheDocument()
+    });
 });
