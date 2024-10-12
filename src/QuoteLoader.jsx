@@ -4,7 +4,11 @@ import Spinner from "./Spinner"
 
 const QuoteLoader = () => {
 
-    const {isLoading, data } = useFetch("https://example.com/quoteoftheday")
+    const { isLoading, data, error } = useFetch("https://example.com/quoteoftheday")
+
+    if(error){
+        return <p>Error loading...</p>
+    }
 
     if(isLoading){
         return <Spinner reason="Quote is loading..." />
