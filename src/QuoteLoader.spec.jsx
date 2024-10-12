@@ -5,7 +5,7 @@ import { describe, expect } from "vitest";
 import QuoteLoader from "./QuoteLoader";
 
 //MockServiceWorker
-import { HttpResponse, http , httpResponse } from "msw"
+import { HttpResponse, http } from "msw"
 import { setupServer } from "msw/node"
 
 
