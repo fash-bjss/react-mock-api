@@ -10,7 +10,7 @@ import QuoteUploader from "./QuoteUploader"
 
 
 const apiRoutes = [
-    http.post("https://example.com/quoteoftheday", async ({request}) => {
+    http.post("https://example.com/quote", async ({request}) => {
 
         const req = await request.json()
         
