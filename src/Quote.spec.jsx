@@ -1,6 +1,6 @@
 import * as React from "react";
-import { render, screen} from "@testing-library/react";
-import { describe, expect, act} from "vitest";
+import { render, screen, act} from "@testing-library/react";
+import { describe, expect} from "vitest";
 import userEvent from "@testing-library/user-event";
 import Quote from "./Quote";
 
