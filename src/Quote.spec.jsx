@@ -20,4 +20,12 @@ describe("Quote is render", ()=> {
 
         expect(screen.getByText(expectedString)).toBeInTheDocument()
     })
+
+    it("has a Like button", async () => {
+      
+        render(<Quote text="text" />);
+      
+        const likeButton = await screen.findByRole("button");
+        expect(likeButton).toHaveTextContent("Like");
+      });
 });
