@@ -1,5 +1,7 @@
+import * as React from "react";
 import { render, screen} from "@testing-library/react";
-import { describe, expect } from "vitest";
+import { describe, expect, act} from "vitest";
+import userEvent from "@testing-library/user-event";
 import Quote from "./Quote";
 
 describe("Quote is render", ()=> {
@@ -27,5 +29,18 @@ describe("Quote is render", ()=> {
       
         const likeButton = await screen.findByRole("button");
         expect(likeButton).toHaveTextContent("Like");
-      });
+    });
+
+    it("updates when the button is clicked", async () => {
+        render(<Quote text="text" />);
+        
+        const user = userEvent.setup()
+        const likeButton = await screen.findByRole("button");
+
+        act(() => {
+            user.click(likeButton)
+        })
+
+        await screen.findByText("Liked");
+    })
 });
