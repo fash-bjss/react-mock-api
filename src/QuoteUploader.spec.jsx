@@ -6,6 +6,8 @@ import {expect, describe} from "vitest"
 import { HttpResponse, http } from "msw"
 import { setupServer } from "msw/node"
 
+import QuoteUploader from "./QuoteUploader"
+
 
 const apiRoutes = [
     http.post("https://example.com/quoteoftheday", async ({request}) => {
