@@ -37,9 +37,9 @@ describe("Quote Uploader", () => {
         
         render(<QuoteUploader text="Some quote" />)
 
-        const someQuote = await screen.findByText("Some quote")
+        const success = await screen.findByText("Successfully Sent")
 
-        expect(someQuote).toBeInTheDocument()
+        expect(success).toBeInTheDocument()
     })
 
 })
